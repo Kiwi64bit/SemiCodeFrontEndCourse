@@ -1,0 +1,68 @@
+/* Key frames */
+@keyframes blinking {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes typewriter-designer {
+    0% {
+        content: '';
+    }
+
+    30% {
+        content: '';
+    }
+
+    35% {
+        content: 'D';
+    }
+
+    40% {
+        content: 'De';
+    }
+
+    45% {
+        content: 'Des';
+    }
+
+    50% {
+        content: 'Desi';
+    }
+
+    55% {
+        content: 'Desig';
+    }
+
+    60% {
+        content: 'Design';
+    }
+
+    65% {
+        content: 'Designe';
+    }
+
+    70% {
+        content: 'Designer';
+    }
+
+    100% {
+        content: 'Designer';
+    }
+}
+
+@keyframes slider {
+    0% {
+        top: -10px;
+    }
+
+    65% {
+        top: 50%;
+        opacity: 1;
+    }
+
+    100% {
+        top: 50%;
+        opacity: 0;
+    }
+}

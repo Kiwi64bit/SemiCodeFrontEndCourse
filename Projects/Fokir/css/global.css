@@ -1,0 +1,229 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --base-color: hsl(0, 0%, 20%);
+    --text-color: hsl(0, 0%, 100%);
+    --text-color2: hsl(0, 0%, 80%);
+    --primary-color: hsl(0, 0%, 8%);
+    --secondary-color: hsl(348, 100%, 60%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Exo 2', sans-serif;
+}
+
+h1 {
+    font-size: min(5rem, 12vw);
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+h2 {
+    text-align: center;
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding-bottom: 2rem;
+    margin: 1rem;
+    background: linear-gradient(var(--secondary-color), var(--secondary-color)) 50% calc(100% - 12px) / 6rem 1px no-repeat,
+        linear-gradient(var(--secondary-color), var(--secondary-color)) 50% calc(100% - 6px) / 12rem 1px no-repeat,
+        linear-gradient(var(--secondary-color), var(--secondary-color)) 50% 100% / 6rem 1px no-repeat;
+}
+
+h3 {
+    font-size: min(2rem, 7vw);
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-color2);
+    line-height: 1.5em;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--base-color);
+    z-index: 999;
+}
+
+nav .navbar {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base-color);
+    padding: 0.5em;
+    margin-inline: auto;
+}
+
+nav .logo {
+    margin-right: auto;
+}
+
+nav .logo img {
+    width: min(50px, 10vw);
+}
+
+nav .burger-icon {
+    display: flex;
+    padding-inline: 0.25em;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+nav .burger-icon svg {
+    fill: var(--secondary-color);
+    width: min(40px, 8vw);
+    height: min(40px, 8vw);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 1em;
+    font-size: min(1rem, 4vw);
+    letter-spacing: 1.5px;
+}
+
+nav li {
+    color: var(--text-color);
+    position: relative;
+}
+
+nav li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 300ms;
+}
+
+nav li a::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: -5px;
+    background-color: var(--secondary-color);
+    transform: translateX(-50%);
+    transition: width 500ms;
+}
+
+nav li.home a {
+    color: var(--secondary-color);
+}
+
+nav li.home a::after {
+    width: 100%;
+}
+
+nav li:hover a {
+    color: var(--secondary-color);
+}
+
+nav li:hover a::after {
+    width: 100%;
+}
+
+nav .horizontal-menu {
+    display: none;
+}
+
+nav .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: min(50px, 10vw);
+    width: min(1000px, 90%);
+    height: 0;
+    background-color: var(--base-color);
+    border-radius: 8px;
+    margin: 32px;
+    overflow: hidden;
+    z-index: 999;
+    transition: height 1s;
+}
+
+nav .dropdown-menu ul {
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    ;
+}
+
+#dropdown-menu-active:checked~.dropdown-menu {
+    height: calc(14 * min(1rem, 4vw) + 3px);
+}
+
+#dropdown-menu-active:checked~.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* call to action buttons */
+.cta-button {
+    font-size: inherit;
+    padding: 1em;
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 0.625em;
+    cursor: pointer;
+    transition: all 500ms ease 0s;
+}
+
+.cta-button a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: inherit;
+    transition: all 500ms ease 0s;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.cta-button:hover a {
+    color: var(--text-color);
+}
+
+.input {
+    font: inherit;
+    outline: none;
+    padding: 0.5em;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    resize: none;
+}
+
+footer {
+    font-size: min(1rem, 4vw);
+    text-align: center;
+    padding: 10px 0;
+}
