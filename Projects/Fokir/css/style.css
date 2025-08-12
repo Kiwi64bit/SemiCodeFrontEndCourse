@@ -277,6 +277,10 @@ section {
 
 /* Services section */
 
+#Services .grid-container {
+    row-gap: 2em;
+}
+
 #Services .service-card {
     width: 100%;
     height: 100%;
